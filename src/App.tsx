@@ -1,7 +1,9 @@
+import Hero from "./components/Hero/Hero";
+
 const App = () => {
   return (
     <div>
-      <h1 className="text-center">Home</h1>
+      <Hero/>
     </div>
   );
 };
