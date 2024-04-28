@@ -1,9 +1,11 @@
 import Hero from "./components/Hero/Hero";
+import Movies from "./components/Movies/Movies";
 
 const App = () => {
   return (
     <div>
-      <Hero/>
+      <Hero />
+      <Movies />
     </div>
   );
 };
