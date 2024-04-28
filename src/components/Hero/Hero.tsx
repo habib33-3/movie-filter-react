@@ -6,7 +6,7 @@ const Hero = () => {
   const filterOptions = ["genre", "language"];
 
   return (
-    <section className="w-full mx-auto px-10 py-7 bg-sky-50 min-h-[70vh] shadow-xl flex flex-col items-center justify-center gap-7">
+    <section className="w-full mx-auto px-10 py-7  min-h-[70vh] shadow-xl flex flex-col items-center justify-center gap-7">
       <div className="w-4/5 mx-auto text-center">
         <TypeAnimation
           sequence={[
@@ -21,7 +21,7 @@ const Hero = () => {
           ]}
           wrapper="div"
           speed={50}
-          className="text-center inline-block text-5xl font-serif font-bold"
+          className="text-center inline-block text-5xl font-serif font-bold text-white"
           repeat={Infinity}
         />
       </div>

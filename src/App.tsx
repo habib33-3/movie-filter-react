@@ -3,7 +3,7 @@ import Movies from "./components/Movies/Movies";
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-[#111]">
       <Hero />
       <Movies />
     </div>

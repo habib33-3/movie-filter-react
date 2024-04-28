@@ -43,15 +43,53 @@ const DetailsModal: FC<DetailsModalPropType> = ({ movie, setIsModalOpen }) => {
           href={`https://www.imdb.com/title/${imdbmovieid}/`}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white text-2xl font-bold flex items-center justify-center"
+          className="text-yellow-500 text-2xl font-bold flex items-center justify-center"
         >
           <FaImdb className="mr-2" />
           IMDb
         </a>
 
-        <p className="text-white">Languages: {movielanguages.join(", ")}</p>
-        <p className="text-white">Countries: {moviecountries.join(", ")}</p>
-        <p className="text-white">Genres: {moviegenres.join(", ")}</p>
+        <div className="mb-4">
+          <h3 className="text-lg font-bold text-white mb-2">Languages:</h3>
+          <div className="flex flex-wrap justify-center">
+            {movielanguages.map((lang) => (
+              <span
+                key={lang}
+                className="bg-purple-600 px-3 py-1 text-center text-white rounded-full mr-2 mb-2"
+              >
+                {lang}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-4">
+          <h3 className="text-lg font-bold text-white mb-2">Genres:</h3>
+          <div className="flex flex-wrap justify-center">
+            {moviegenres.map((genre) => (
+              <span
+                key={genre}
+                className="bg-blue-600 px-3 py-1 text-center text-white rounded-full mr-2 mb-2"
+              >
+                {genre}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-4">
+          <h3 className="text-lg font-bold text-white mb-2">Countries:</h3>
+          <div className="flex flex-wrap justify-center">
+            {moviecountries.map((country) => (
+              <span
+                key={country}
+                className="bg-sky-500 px-3 py-1 text-center text-white rounded-full mr-2 mb-2"
+              >
+                {country}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
