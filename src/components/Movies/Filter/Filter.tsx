@@ -36,7 +36,7 @@ const Filter: FC<FilterProps> = ({ onFilterChange }) => {
           handleFilterChange();
         }}
       >
-        <option value="">All Genres</option>
+        <option value="">All</option>
         {genreFilters.map((option) => (
           <option key={option} value={option}>
             {option}
@@ -53,7 +53,7 @@ const Filter: FC<FilterProps> = ({ onFilterChange }) => {
           handleFilterChange();
         }}
       >
-        <option value="">All Languages</option>
+        <option value="">All</option>
         {languageFilters.map((option) => (
           <option key={option} value={option}>
             {option}
@@ -70,7 +70,7 @@ const Filter: FC<FilterProps> = ({ onFilterChange }) => {
           handleFilterChange();
         }}
       >
-        <option value="">All Countries</option>
+        <option value="">All</option>
         {countryFilters.map((option) => (
           <option key={option} value={option}>
             {option}
