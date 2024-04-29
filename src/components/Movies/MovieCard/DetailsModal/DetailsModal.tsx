@@ -21,7 +21,7 @@ const DetailsModal: FC<DetailsModalPropType> = ({ movie, setIsModalOpen }) => {
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center z-50 overflow-y-auto">
       <div className="absolute inset-0 bg-black opacity-70" />
-      <div className="bg-gray-900 p-8 rounded-lg z-50 w-3/4 md:w-1/2  lg:w-1/3 max-h-full overflow-y-auto relative">
+      <div className="bg-gray-900 p-8 rounded-lg z-50 w-11/12 md:w-1/2  lg:w-1/3 max-h-full overflow-y-auto relative">
         <div className="absolute top-0 right-0 p-2 ">
           <AiOutlineClose
             className="text-white cursor-pointer transition duration-300 hover:bg-gray-700 rounded-md p-1"
