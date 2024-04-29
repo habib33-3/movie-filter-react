@@ -1,11 +1,11 @@
-import { useState } from "react";
-import useMovies from "../../../hook/useMovies";
+import { useMemo, useState } from "react";
+import useMovies from "../../hook/useMovies";
 import {
   countryFilters,
   genresFilters,
   languagesFilters,
-} from "../../../data/filerOptions";
-import Movies from "../Movies";
+} from "../../data/filerOptions";
+import Movies from "../Movies/Movies";
 
 const Filter = () => {
   const { movies } = useMovies();
@@ -13,21 +13,19 @@ const Filter = () => {
   const [languages, setLanguages] = useState<string>("All");
   const [countries, setCountries] = useState<string>("All");
 
-  const filteredMovies = movies.filter((movie) => {
-    const genreMatch = genres === "All" || movie.moviegenres.includes(genres);
-    const languageMatch =
-      languages === "All" || movie.movielanguages.includes(languages);
-    const countryMatch =
-      countries === "All" || movie.moviecountries.includes(countries);
-    return (
-      (genres === "All" || genreMatch) &&
-      (languages === "All" || languageMatch) &&
-      (countries === "All" || countryMatch)
-    );
-  });
+  const filteredMovies = useMemo(() => {
+    return movies.filter((movie) => {
+      const genreMatch = genres === "All" || movie.moviegenres.includes(genres);
+      const languageMatch =
+        languages === "All" || movie.movielanguages.includes(languages);
+      const countryMatch =
+        countries === "All" || movie.moviecountries.includes(countries);
+      return genreMatch && languageMatch && countryMatch;
+    });
+  }, [movies, genres, languages, countries]);
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center">
       <div className="flex space-x-4">
         <select
           id="genre-filter"
@@ -38,7 +36,7 @@ const Filter = () => {
         >
           <option
             value="All"
-            selected
+            selected={genres === "All"}
           >
             All
           </option>
@@ -61,7 +59,7 @@ const Filter = () => {
         >
           <option
             value="All"
-            selected
+            selected={languages === "All"}
           >
             All
           </option>
@@ -84,7 +82,7 @@ const Filter = () => {
         >
           <option
             value="All"
-            selected
+            selected={countries === "All"}
           >
             All
           </option>
